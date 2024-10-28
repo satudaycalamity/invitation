@@ -1,0 +1,58 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint==phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if $breakpoint==tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+  @if $breakpoint==tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } // 1200px
+  }
+  @if $breakpoint==normal-desktop {
+    @media only screen and (min-width: 90em) {
+      @content;
+    } // 1440
+  }
+  @if $breakpoint==big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } // 1800
+  }
+}
+
+@mixin display-flex {
+    display: -webkit-box; // OLD - iOS 6-, Safari 3.1-6
+    display: -moz-box; // OLD - Firefox 19- (buggy but mostly works)
+    display: -ms-flexbox; // TWEENER - IE 10
+    display: -webkit-flex; // NEW - Chrome
+    display: flex; // NEW, Spec - Opera 12.1, Firefox 20+
+  }
+
+  @mixin center-flex {
+    @include display-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @mixin center-absolute {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @mixin translate($x, $y) {
+    transform: translate($x, $y); // W3C
+    -webkit-transform: translate($x, $y); // Safari & Chrome
+    -moz-transform: translate($x, $y); // Firefox
+    -ms-transform: translate($x, $y); // Internet Explorer
+    -o-transform: translate($x, $y);
+  }
+  

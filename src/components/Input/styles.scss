@@ -1,0 +1,15 @@
+@import "../../sass/main.scss";
+
+.input {
+  &__label {
+    margin-bottom: 0.5rem;
+  }
+
+  &__input {
+    margin-bottom: 0.5rem;
+
+    &__html {
+      width: 100%;;
+    }
+  }
+}

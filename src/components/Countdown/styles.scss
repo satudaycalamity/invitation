@@ -1,0 +1,6 @@
+@import "../../sass/main.scss";
+
+.Countdown {
+  @include display-flex;
+  gap: 1rem;
+}

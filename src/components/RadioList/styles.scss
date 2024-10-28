@@ -1,0 +1,44 @@
+@import "../../sass/main.scss";
+
+.radio-list {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  &__item {
+    @include display-flex;
+  
+    &__circle {
+      @include center-flex;
+      background-color: white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      margin-top: 0.5rem;
+      margin-right: 1rem;
+      margin-bottom: 0.5rem;
+      
+      &__inner {
+        width: 1.4rem;
+        height: 1.4rem;
+        border-radius: 50%;
+
+        &--checked {
+          background-color: blue;
+        }
+      }
+    }
+
+    &__label {
+      @include center-flex;
+    }
+  }
+}
+
+.radio-list--vertical {
+  @include display-flex;
+  flex-flow: column;
+}
+
+.radio-list--horizontal {
+  @include display-flex;
+  flex-flow: column;
+}

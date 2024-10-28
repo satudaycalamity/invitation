@@ -1,0 +1,48 @@
+@import "../../sass/main.scss";
+
+.trivia {
+  &__carousel {
+    position: relative;
+  
+    &__slide {
+      position: absolute;
+      width: 100%;
+      height: 20rem;
+      background-color: white;
+
+      &--prev {
+        z-index: -1;
+        animation: swipe-prev 0.5s;
+      }
+
+      &--current {
+        z-index: 1;
+        animation: swipe-current 0.5s;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 20rem;
+  }
+}
+
+@keyframes swipe-prev {
+  from {
+    @include translate(0, 0);
+  }
+
+  to {
+    @include translate(-100%, 0);
+  }
+}
+
+@keyframes swipe-current {
+  from {
+    @include translate(100%, 0);
+  }
+
+  to {
+    @include translate(0, 0);
+  }
+}
